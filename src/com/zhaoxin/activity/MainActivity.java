@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
+import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -116,8 +117,17 @@ public class MainActivity extends Activity implements OnClickListener,
 				list.removeView(member);
 			}
 		});
-		if(size == 0){
-			member.
+		if (size == 0) {
+			member.getViewTreeObserver().addOnGlobalLayoutListener(
+					new OnGlobalLayoutListener() {
+
+						@Override
+						public void onGlobalLayout() {
+							if(size == 0){
+								size = member.getWidth()/2;
+							}
+						}
+					});
 		}
 	}
 
