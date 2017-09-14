@@ -1,0 +1,116 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context="com.example.netdemo.MainActivity" >
+
+    <RelativeLayout
+        android:id="@+id/football_courts"
+        android:layout_width="204dp"
+        android:layout_height="315dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/aaa" >
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="160dp"
+        android:layout_height="240dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="10dp"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:id="@+id/list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/history"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/football_courts"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/save"
+        android:background="@drawable/save_bg"
+        android:gravity="center"
+        android:text="历史"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/save"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/football_courts"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/save_bg"
+        android:gravity="center"
+        android:text="保存"
+        android:textColor="#ffffff" />
+
+    <LinearLayout
+        android:id="@+id/historyLinear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:visibility="gone"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/list_history"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:listSelector="#cccccc" >
+        </ListView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#888888" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/clear"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="清空"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#888888" />
+
+            <TextView
+                android:id="@+id/cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="取消"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
